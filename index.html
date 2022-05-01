@@ -4,29 +4,55 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Image Slide</title>
+    <title>Clock Animation</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>LOGO</h1>
-        <nav>
-            <li>Home</li>
-            <li>About</li>
-            <li>Contact</li>
-        </nav>
-    </header>
-    <div class="main">
-      <div class="content">
-         <h1>FORD</h1>
-         <h3>Brand New <span>"muscle car"</span></h3>
-         <p>Building yersterday's Dream car's Today</p>
-         <button>get Started</button>
-         <button>take a ride</button>
-       </div> 
-           <div class="image">
-             <img src="Car.gif">
-       </div>   
+    <div class="outerclock">
+        <div class="innerclock">
+            <div class="circle"></div>
+            <div id="hour"></div>
+            <div id="min"></div>
+            <div id="sec"></div>
+        </div>
+        <div class="time">
+            <p>12</p>
+            <p>9</p>
+            <p>6</p>
+            <P>3</p>
+        </div>
     </div>
+     <script>
+        setInterval(()=>{
+          
+            setInterval(() => {
+                d = new Date(); //object of date()
+hr = d.getHours();
+min = d.getMinutes();
+sec = d.getSeconds();
+hr_rotation = 30 * hr + min / 2; //converting current time
+min_rotation = 6 * min;
+sec_rotation = 6 * sec;
+
+hour.style.transform = `rotate(${hr_rotation}deg)`;
+minute.style.transform = `rotate(${min_rotation}deg)`;
+second.style.transform = `rotate(${sec_rotation}deg)`;
+}, 1000); 
+ </script>
 </body>
 </html>
+<script>
+ setInterval(() => {
+d = new Date(); //object of date()
+hr = d.getHours();
+min = d.getMinutes();
+sec = d.getSeconds();
+hr_rotation = 30 * hr + min / 2; //converting current time
+min_rotation = 6 * min;
+sec_rotation = 6 * sec;
+
+hour.style.transform = `rotate(${hr_rotation}deg)`;
+minute.style.transform = `rotate(${min_rotation}deg)`;
+second.style.transform = `rotate(${sec_rotation}deg)`;
+}, 1000);
+</script>
